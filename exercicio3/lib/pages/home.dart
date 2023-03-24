@@ -30,6 +30,69 @@ class HomePage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(155, 30, 0, 30),
+            child: Row(
+              children: const [
+                Card(
+                  elevation: 0,
+                  color: Color.fromARGB(149, 148, 109, 253),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: 25,
+                    height: 10,
+                  ),
+                ),
+                Card(
+                  elevation: 0,
+                  color: Color.fromARGB(146, 211, 209, 209),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: 13,
+                    height: 10,
+                  ),
+                ),
+                Card(
+                  elevation: 0,
+                  color: Color.fromARGB(146, 211, 209, 209),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: 13,
+                    height: 10,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 70,
+            width: 250,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(210, 151, 114, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+              child: const Text(
+                'Get Started',
+                style: TextStyle(),
+              ),
+            ),
           )
         ],
       ),

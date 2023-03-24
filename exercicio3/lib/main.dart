@@ -1,4 +1,6 @@
-import 'package:exercicio3/pages/home.dart';
+// import 'package:exercicio3/pages/home.dart';
+import 'package:exercicio3/pages/cart.dart';
+import 'package:exercicio3/pages/shop.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.light(),
-      home: const HomePage(),
+      home: const CartPage(),
     );
   }
 }
