@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:exercicio3/routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -81,7 +82,9 @@ class HomePage extends StatelessWidget {
             height: 70,
             width: 250,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.shopScreen);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(210, 151, 114, 255),
                 shape: RoundedRectangleBorder(

@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:exercicio3/routes.dart';
 
-class ShopPage extends StatelessWidget {
+class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
+
+  @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+
+class _ShopPageState extends State<ShopPage> {
+  double manga = 0;
+
+  void adicionarManga() {
+    setState(() {
+      manga++;
+    });
+  }
+
+  void diminuirManga() {
+    setState(() {
+      if (manga > 0) {
+        manga--;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +31,9 @@ class ShopPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(AppRoutes.homeScreen);
+          },
           icon: const Icon(Icons.arrow_back_ios),
           color: Colors.black,
         ),
@@ -50,7 +74,7 @@ class ShopPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: diminuirManga,
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -77,13 +101,13 @@ class ShopPage extends StatelessWidget {
                     ),
                     minimumSize: const Size(0, 40),
                   ),
-                  child: const Text('2'),
+                  child: Text('$manga'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: adicionarManga,
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -103,9 +127,9 @@ class ShopPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
             child: Row(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 90, 0),
+              children: [
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 70, 0),
                   child: Text(
                     'Duncan Mango',
                     style: TextStyle(
@@ -115,8 +139,8 @@ class ShopPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '\$2.00pc',
-                  style: TextStyle(
+                  '\$' '$manga' '0pc',
+                  style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(210, 151, 114, 255),
@@ -308,7 +332,9 @@ class ShopPage extends StatelessWidget {
                   height: 70,
                   width: 170,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.cartScreen);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(210, 151, 114, 255),
                       shape: RoundedRectangleBorder(
